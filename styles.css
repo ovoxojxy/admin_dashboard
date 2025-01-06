@@ -41,6 +41,11 @@ html {
     font-size: 20px;
 }
 
+.left{
+    display: flex;
+    flex-direction: row;
+}
+
 .bottom-container{
     display: flex;
     flex-direction: row;
@@ -191,18 +196,80 @@ menu.bottom{
 .article {
   background-color: #E3E8EF;
   grid-row: 2 / 6;
+  padding: 16px;
+  overflow: auto;
 }
-
-.article h4{
+  
+.title-text {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+}
+
+.article-container{
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+.cards {
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 12px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.cards:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.cards .main p {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+.cards .icons svg {
+    width: 20px;
+    height: 20px;
+    fill: #555;
+    cursor: pointer;
+}
+
+.cards.announcement {
+    grid-column: span 1;
+    background-color: white;
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cards.announcement p {
+    font-size: 14px;
+    margin: 0;
+    color: #555;
+}
+
+@media (min-width: 768px) {
+    .article-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .article p {
   font-size: 18px;
   font-family: sans-serif;
-  color: white;
+  color: black;
   text-align: left;
 }
 
